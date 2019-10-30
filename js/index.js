@@ -13,19 +13,15 @@ busLeave.addEventListener('mouseleave', () => {
 });
 
 const imageContentEnter = document.querySelectorAll('.img-content');
-imageContentEnter.forEach(function(iteration) {
-    iteration.addEventListener('mouseenter', () => {
-        iteration.style.transform ='scale(1.05)';
-        iteration.style.transition = 'all 0.3s';
-    });
+imageContentEnter[1].addEventListener('mouseenter', () => {
+    imageContentEnter[1].style.transform ='scale(1.05)';
+    imageContentEnter[1].style.transition = 'all 0.3s';
 });
 
 const imageContentLeave = document.querySelectorAll('.img-content');
-imageContentLeave.forEach(function(iteration) {
-    iteration.addEventListener('mouseleave', () => {
-        iteration.style.transform ='scale(1)';
-        iteration.style.transition = 'all 0.3s';
-    });
+imageContentLeave[1].addEventListener('mouseleave', () => {
+    imageContentLeave[1].style.transform ='scale(1)';
+    imageContentLeave[1].style.transition = 'all 0.3s';
 });
 
 const destinationLeave = document.querySelector('.content-destination img')
@@ -46,6 +42,30 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach(function(iteration) {
     iteration.addEventListener('click', () => {
         iteration.textContent = 'Signed Up!';
+        iteration.style.background = 'white';
+        iteration.style.color = '#17A2B8';
         iteration.preventDefault();
     });
 });
+
+// keydown
+
+const body = document.querySelector('body');
+body.addEventListener("keydown", event => {
+    if (event.isComposing || event.keyCode === 68) {
+      body.style.background = '#141d26';
+      body.style.color = 'whitesmoke';
+    }
+});
+
+// wheel, not working
+
+// imageContentLeave[0].addEventListener('wheel', zoom);
+
+// load
+
+window.addEventListener('load', (event) => {
+    alert('This website uses cookies.');
+  });
+
+//
